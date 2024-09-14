@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Cookies Popup</title>
+
+      <!-- CSS Link -->
+      <link rel="stylesheet" href="./style.css" />
+   </head>
+   <body>
+      <div class="container">
+         <button class="open_btn">Show Popup</button>
+      </div>
+
+      <!-- Start| Popup Cookie -->
+      <div class="cookie_box">
+         <span class="close_btn">&times;</span>
+         <img src="./cookie.png" alt="cookie image" />
+         <h3>Cookies🍪 and privacy</h3>
+         <p>
+            This website uses cookies to ensure you to get the best experience
+            on our website
+         </p>
+         <a href="#" class="accept">Accept all cookies🍪</a>
+         <a href="#" class="setting">Customize settings</a>
+      </div>
+      <!-- End| Popup Cookie -->
+
+      <!-- JavaScript -->
+      <script>
+         const openBtn = document.querySelector(".open_btn");
+         const closeBtn = document.querySelector(".close_btn");
+         const cookieBox = document.querySelector(".cookie_box");
+
+         openBtn.addEventListener("click", () => {
+            cookieBox.classList.toggle("active");
+            if (cookieBox.classList.contains("active")) {
+               openBtn.innerHTML = "Hide Popup";
+            } else {
+               openBtn.innerHTML = "Show Popup";
+            }
+         });
+
+         closeBtn.addEventListener("click", () => {
+            cookieBox.classList.remove("active");
+            openBtn.innerHTML = "Show Popup";
+         });
+
+         /*
+         document.querySelector(".open_btn").onclick = () => {
+            document.querySelector(".cookie_box").classList.toggle("active");
+         };
+         document.querySelector(".close_btn").onclick = () => {
+            document.querySelector(".cookie_box").classList.remove("active");
+         };
+         */
+      </script>
+   </body>
+</html>
